@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>群英荟萃交流群</title>
+
+    <style>
+        .layer {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-image: url('/jianliang/3.png');
+            background-color: #000;
+            opacity: 0.15;
+        }
+
+        .timer {
+            position: fixed;
+            top: 80px;
+            right: 10px;
+            color: #000;
+            font-size: 18px;
+        }
+
+        .geo {
+            position: fixed;
+            top: 110px;
+            right: 10px;
+            color: #000;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="layer"></div>
+<div class="geo">
+
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+<center>
+<font id="ip" ></font>
+</center> 
+<script type="text/javascript">
+(function ip() {
+var str=returnCitySN["cip"]+','+returnCitySN["cname"];
+var _result=document.getElementById("ip");
+_result.innerHTML = str;
+})();
+</script>
+</div>
+
+<div id="timer" class="timer"></div>
+<iframe id="my-frame" src="http://mobile.yangkeduo.com/personal.html" frameborder="0" style="width: 100%;min-height: 800px"></iframe>
+</body>
+<script>
+    var timer = document.getElementById('timer');
+    var frame = document.getElementById('my-frame');
+    var height = window.innerHeight;
+    frame.getAttributeNode('style').value = "width: 100%;height: " + height + "px";
+    timer.innerHTML = (new Date).toISOString();
+    setInterval(function () {
+        timer.innerHTML = (new Date).toISOString();
+    }, 1000);
+</script>
+Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</html>
